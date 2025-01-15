@@ -1,4 +1,5 @@
-/* Monophonic synthesizer which contains all the previously defined synthesizers.
+/* This is the main synthesizer.
+** It's a monophonic synthesizer which contains multiple synthesizers and effects.
 ** This is a monophonic synth (it can only play one note at a time) but it's called
 ** "PolySynth" because it contains multiple synthesizers in one:
 ** - DuoSynth
@@ -12,6 +13,8 @@ class PolySynth
 
     #multiModeFilter = new MultiModeFilter();
 
+    #distortionEffect = new DistortionEffect();
+
     constructor()
     {
         this.#duoSynth.setEnabled(true);
@@ -23,8 +26,10 @@ class PolySynth
         this.#multiModeFilter.connectInput(this.#fatSynth);
         this.#multiModeFilter.connectInput(this.#fmSynth);
 
-        // Connect filter to destination
-        this.#multiModeFilter.getOutputNode().toDestination();
+        // Connect filter to distortion effect
+        this.#multiModeFilter.getOutputNode().connect(this.#distortionEffect.getInputNode());
+
+        this.#distortionEffect.getOutputNode().toDestination();
     }
 
     triggerAttack(note)
@@ -52,4 +57,5 @@ class PolySynth
     getFatSynth() { return this.#fatSynth; }
     getFMSynth() { return this.#fmSynth; }
     getMultiModeFilter() { return this.#multiModeFilter; }
+    getDistortionEffect() { return this.#distortionEffect; }
 }

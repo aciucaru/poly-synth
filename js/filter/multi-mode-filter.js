@@ -18,13 +18,8 @@ class MultiModeFilter
     {
         // Instantiate and set filter nodes
         this.#lowPassFilter = new Tone.Filter(4000, "lowpass");
-        // this.#lowPassFilter.frequency.setValueAtTime(4000, Tone.now());
-
         this.#notchFilter = new Tone.Filter(4000, "notch");
-        // this.#notchFilter.frequency.setValueAtTime(4000, Tone.now());
-
         this.#highPassFilter = new Tone.Filter(4000, "highpass");
-        // this.#highPassFilter.frequency.setValueAtTime(4000, Tone.now());
 
         // Instantiate and set gain nodes
         this.#lowPassFilterGain = new Tone.Gain();

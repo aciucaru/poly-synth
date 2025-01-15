@@ -44,7 +44,7 @@ class FatSynthMonophonic
                             });
 
         this.#gain = new Tone.Gain();
-        this.#gain.gain.linearRampToValueAtTime(1.0, Tone.now());
+        this.#gain.gain.linearRampToValueAtTime(0.7, Tone.now());
 
         this.#fatSynth.connect(this.#gain);
     }

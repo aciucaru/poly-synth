@@ -96,6 +96,28 @@
     margin: 2px;
 }
 
+.radio-button-3-by-3-group
+{
+    justify-self: stretch;
+    align-self: stretch;
+
+    width: auto;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+
+    justify-items: center;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: space-around;
+    gap: 0px;
+
+    padding: 0px;
+    margin: 2px;
+}
+
 .radio-button
 {
     width: 20px;

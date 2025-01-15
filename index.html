@@ -374,19 +374,16 @@
               <label class="radio-label">
                 <input class="radio-button" type="radio" name="fatsynth-duration" value="4n">
               </label>
-
               <div class="radio-individual-label">1/4</div>
   
               <label class="radio-label">
                 <input class="radio-button" type="radio" name="fatsynth-duration" value="2n" checked>
               </label>
-
               <div class="radio-individual-label">1/2</div>
 
               <label class="radio-label">
                 <input class="radio-button" type="radio" name="fatsynth-duration" value="1n">
               </label>
-
               <div class="radio-individual-label">1</div>
             </div>
           </div>
@@ -413,6 +410,22 @@
               <div class="knob-label unselectable">Q FACT.</div>
             </div>
           </div>
+
+          <!-- Distortion effect panel **************************************************************************************** -->
+          <div class="distortion-effect-panel">
+            <div class="synth-panel-label distortion-effect-label" style="grid-column: 1 / 2; grid-row: 1 / 2;">DISTORTION</div>
+
+            <div id="distortion-effect-distortion-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">DIST.</div>
+            </div>
+
+            <div id="distortion-effect-wet-level-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">AMOUNT</div>
+            </div>
+          </div>
+
         </div>
 
         <br><br>
@@ -426,6 +439,7 @@
     <script src="js/synth/fat-synth.js"></script>
     <script src="js/synth/fm-synth.js"></script>
     <script src="js/filter/multi-mode-filter.js"></script>
+    <script src="js/effect/distortion-effect.js"></script>
     <script src="js/synth/poly-synth.js"></script>
 
     <script src="js/ui/controls/toggle-button.js"></script>
@@ -440,6 +454,7 @@
     <script src="js/ui/panels/fat-synth-panel.js"></script>
     <script src="js/ui/panels/fm-synth-panel.js"></script>
     <script src="js/ui/panels/multi-mode-filter-panel.js"></script>
+    <script src="js/ui/panels/distortion-effect-panel.js"></script>
 
     <script src="js/main.js"></script>
 	</body>
