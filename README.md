@@ -11,6 +11,9 @@ This synthesizer has the folowing features:
   * FMSynth
   * Fat synth (a Tone.js PolySynth with a Tone.js FatOScillator)
 
+### How to run
+Just download the project and open the index.html file in a browser. No web server or compilation required.
+
 ### Compatibility
 Works most certainly with Google Chrome. Unfortunately, this web synthesizer does not work perfectly on Firefox, because Firefox is missing some essential JavaScript Web Audio API functions.
 
