@@ -23,5 +23,3 @@ So, Google Chrome browser is recomended.
 The source code is licensed under the MIT license.
 
 The images that I made myself are licensed under Creative Commons CC0.
-
-The rest of the images/fonts are free images/fonts from the internet and they have their own license.
