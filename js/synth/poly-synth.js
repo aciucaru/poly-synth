@@ -14,6 +14,7 @@ class PolySynth
     #multiModeFilter = new MultiModeFilter();
 
     #distortionEffect = new DistortionEffect();
+    #chebyshevEffect = new ChebyshevDistortionEffect();
 
     constructor()
     {
@@ -29,7 +30,8 @@ class PolySynth
         // Connect filter to distortion effect
         this.#multiModeFilter.getOutputNode().connect(this.#distortionEffect.getInputNode());
 
-        this.#distortionEffect.getOutputNode().toDestination();
+        this.#distortionEffect.getOutputNode().connect(this.#chebyshevEffect.getInputNode());
+        this.#chebyshevEffect.getOutputNode().toDestination();
     }
 
     triggerAttack(note)
@@ -56,6 +58,9 @@ class PolySynth
     getDuoSynth() { return this.#duoSynth; }
     getFatSynth() { return this.#fatSynth; }
     getFMSynth() { return this.#fmSynth; }
+
     getMultiModeFilter() { return this.#multiModeFilter; }
+
     getDistortionEffect() { return this.#distortionEffect; }
+    getChebyshevEffect() { return this.#chebyshevEffect; }
 }

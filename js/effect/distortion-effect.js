@@ -4,7 +4,7 @@ class DistortionEffect
 
     constructor()
     {
-        this.#distortion = new Tone.Distortion(0.5);
+        this.#distortion = new Tone.Distortion(0.0);
     }
 
     // Returns the final node of this synth

@@ -12,6 +12,7 @@ class AppData
     getMultiModeFilter() { return this.#polySynth.getMultiModeFilter(); }
 
     getDistortionEffect() { return this.#polySynth.getDistortionEffect(); }
+    getChebyshevEffect() { return this.#polySynth.getChebyshevEffect(); }
 
     getPolySynth() { return this.#polySynth; }
 }

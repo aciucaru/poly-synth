@@ -413,7 +413,7 @@
 
           <!-- Distortion effect panel **************************************************************************************** -->
           <div class="distortion-effect-panel">
-            <div class="synth-panel-label distortion-effect-label" style="grid-column: 1 / 2; grid-row: 1 / 2;">DISTORTION</div>
+            <div class="synth-panel-label pre-effect-label" style="grid-column: 1 / 2; grid-row: 1 / 2;">DISTOR.</div>
 
             <div id="distortion-effect-distortion-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
               <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
@@ -421,6 +421,21 @@
             </div>
 
             <div id="distortion-effect-wet-level-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">AMOUNT</div>
+            </div>
+          </div>
+
+          <!-- Chebyshev distortion effect panel **************************************************************************************** -->
+          <div class="chebyshev-effect-panel">
+            <div class="synth-panel-label pre-effect-label" style="grid-column: 1 / 2; grid-row: 1 / 2;">CHEBY.</div>
+
+            <div id="chebyshev-effect-polynomial-order-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">POLY</div>
+            </div>
+
+            <div id="chebyshev-effect-wet-level-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 3 / 4;">
               <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
               <div class="knob-label unselectable">AMOUNT</div>
             </div>
@@ -440,6 +455,8 @@
     <script src="js/synth/fm-synth.js"></script>
     <script src="js/filter/multi-mode-filter.js"></script>
     <script src="js/effect/distortion-effect.js"></script>
+    <script src="js/effect/chebyshev-distortion-effect.js"></script>
+
     <script src="js/synth/poly-synth.js"></script>
 
     <script src="js/ui/controls/toggle-button.js"></script>
@@ -455,6 +472,7 @@
     <script src="js/ui/panels/fm-synth-panel.js"></script>
     <script src="js/ui/panels/multi-mode-filter-panel.js"></script>
     <script src="js/ui/panels/distortion-effect-panel.js"></script>
+    <script src="js/ui/panels/chebyshev-effect-panel.js"></script>
 
     <script src="js/main.js"></script>
 	</body>

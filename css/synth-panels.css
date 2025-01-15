@@ -206,8 +206,25 @@
     padding: 0px;
 }
 
-.distortion-effect-label
+.chebyshev-effect-panel
+{
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(3, auto);
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 0px;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.pre-effect-label
 {
     text-align: center;
     color: hsl(220, 25%, 50%);
 }
+

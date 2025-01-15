@@ -60,7 +60,7 @@ class FMSynthPanel
         knob4Options.minValue = 0.01;
         knob4Options.maxValue = 10.0;
         knob4Options.initialValue = 3.0;
-        knob4Options.step = 0.1;
+        knob4Options.step = 0.5;
         this.#harmonicityKnob = new Knob("fmsynth-harmonicity-knob", knob4Options);
         this.#harmonicityKnob.setOnValueChange((newValue) =>
             {

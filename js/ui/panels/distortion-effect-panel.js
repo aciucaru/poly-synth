@@ -8,7 +8,7 @@ class DistortionEffectPanel
         const knob1Options = new KnobOptions();
         knob1Options.minValue = 0.0;
         knob1Options.maxValue = 1.0;
-        knob1Options.initialValue = 0.5;
+        knob1Options.initialValue = 0.0;
         knob1Options.step = 0.01;
         knob1Options.decimals = 2;
         this.#distortionKnob = new Knob("distortion-effect-distortion-knob", knob1Options);
