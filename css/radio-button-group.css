@@ -1,0 +1,224 @@
+/* There are 2 choices for radio containers: horizontal or vertical */
+.radio-button-horizontal-group
+{
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; /* set alignment on main axis */
+    align-items: center; /* set alingment on cross-axis */
+    align-content: center; /* set space between flex lines */
+
+    padding: 0px;
+    margin: 2px;
+}
+
+.radio-button-vertical-group
+{
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center; /* set alignment on main axis */
+    align-items: center; /* set alingment on cross-axis */
+    align-content: center; /* set space between flex lines */
+
+    padding: 0px;
+    margin: 2px;
+}
+
+.radio-button-2-by-3-group
+{
+    justify-self: stretch;
+    align-self: stretch;
+
+    width: auto;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+
+    justify-items: center;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: space-around;
+    gap: 0px;
+
+    padding: 0px;
+    margin: 2px;
+}
+
+.radio-button-2-by-3-compact-group
+{
+    justify-self: stretch;
+    align-self: stretch;
+
+    width: auto;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-around;
+    gap: 0px;
+
+    padding: 0px;
+    margin: 2px;
+}
+
+
+.radio-button-4-by-3-group
+{
+    justify-self: stretch;
+    align-self: stretch;
+
+    width: auto;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
+
+    justify-items: center;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: space-around;
+    gap: 0px;
+
+    padding: 0px;
+    margin: 2px;
+}
+
+.radio-button
+{
+    width: 20px;
+    height: 20px;
+
+    padding: 0px;
+    margin: 2px;
+
+    background-size: 100% auto;
+    background-size: contain;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.radio-button:hover
+{
+    filter: saturate(400%) brightness(200%);
+}
+
+
+/* label:has([type=radio]) */
+.radio-label label:has([type=radio])
+{
+    display: inline-flex;
+    align-items: center;
+
+    background-image: url("../images/radio/radio-button-off-opt.svg");
+    filter: saturate(400%) hue-rotate(-100deg);
+}
+  
+/* label:has([type=radio]:not(:disabled)) */
+.radio-label label:has([type=radio]:not(:disabled))
+{
+    cursor: pointer;
+}
+  
+.radio-label [type=radio]
+{
+    appearance: none;
+    display: flex;
+    background-image: url("../images/radio/radio-button-off-opt.svg");
+    filter: saturate(400%) hue-rotate(-100deg);
+}
+  
+/* label:has([type=radio]:checked) */
+.radio-label label:has([type=radio]:checked)
+{
+    /* border: solid 1px #14bf8b;
+    background-color: #14bf8b;
+    color: #fff; */
+
+    /* background-image: url("../images/radio/radio-button-on-opt.svg"); */
+}
+  
+.radio-label [type=radio]:checked
+{
+    background-image: url("../images/radio/radio-button-on-opt.svg");
+    filter: saturate(400%) hue-rotate(-100deg);
+}
+
+.radio-button-reset
+{
+    border: none;
+
+    background-color: none;
+    background: none;
+}
+
+.radio-group-label
+{
+    margin: 0px;
+    padding: 0px;
+
+    color: hsl(0, 0%, 85%);
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+
+    /* make unselectable */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.radio-individual-label
+{
+    margin: 0px;
+    padding: 0px;
+
+    color: hsl(0, 0%, 85%);
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+
+    /* make unselectable */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.radio-icon
+{
+    width: 14px;
+    height: 14px;
+
+    padding: 0px;
+    margin: 2px;
+
+    border: none;
+
+    /* necessary settings, otherwise the SVG background won't display properly: */
+    background-size: 100% auto;
+    background-size: contain;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top left;
+
+    /* make unselectable */
+    user-select: none;
+    -webkit-user-select: none;
+}

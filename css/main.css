@@ -1,0 +1,95 @@
+/* settings for applying 'border-box' box sizing to everything */
+html
+{
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    
+    margin: 0px;
+    padding: 0px;
+
+    background-color: hsl(180, 20%, 5%);
+}
+
+/* settings for applying 'border-box' box sizing to everything through inheritance */
+*, *:before, *:after
+{ box-sizing: inherit; }
+
+body
+{
+    width: 100%;
+    height: 100%;
+    
+    margin: 0px;
+    padding: 0px;
+
+    background: linear-gradient(hsla(180, 20%, 20%, 0.3) 0%, hsla(200, 20%, 0%, 0.3) 50%),
+                radial-gradient(ellipse at top, hsla(180, 20%, 20%, 0.4) 0%, hsla(200, 20%, 0%, 0.4) 50%),
+                url("../images/textures/texture-large-filt-seamless-dark.png") repeat top left;
+
+}
+
+.main-container
+{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center; /* set alignment on main axis */
+    align-items: center; /* set alingment on cross-axis */
+    align-content: center; /* set space between flex lines */
+
+    margin: 0px;
+    padding: 30px;
+
+    background: linear-gradient(hsla(180, 20%, 20%, 0.3) 0%, hsla(200, 20%, 0%, 0.3) 50%),
+                radial-gradient(ellipse at top, hsla(180, 20%, 20%, 0.4) 0%, hsla(200, 20%, 0%, 0.4) 50%),
+                url("../images/textures/texture-large-filt-seamless-dark.png") repeat top left;
+}
+
+.horizontal-container-centered
+{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; /* set alignment on main axis */
+    align-items: center; /* set alingment on cross-axis */
+    align-content: center; /* set space between flex lines */
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.vertical-container-centered
+{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center; /* set alignment on main axis */
+    align-items: center; /* set alingment on cross-axis */
+    align-content: center; /* set space between flex lines */
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.button-reset
+{
+    border: none;
+
+    background-color: none;
+    background: none;
+}
+
+.unselectable
+{
+    user-select: none;
+    -webkit-user-select: none;
+}
+

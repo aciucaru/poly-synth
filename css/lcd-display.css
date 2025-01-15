@@ -1,0 +1,130 @@
+.display-and-battery-container
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start; /* set alignment on main axis */
+    align-items: center; /* set alingment on cross-axis */
+    align-content: center; /* set space between flex lines */
+    gap: 10px;
+
+    margin: 0px;
+    padding: 20px;
+
+    border: none;
+    border-radius: 2px;
+
+    background-image: linear-gradient(hsl(45, 23%, 59%),hsl(45, 23%, 54%));
+
+    box-shadow: inset 2px 2px 2px 0px hsla(39, 28%, 10%, 0.7),
+                inset -2px -2px 2px 0px hsla(39, 28%, 95%, 0.3);
+}
+
+.logo
+{
+    height: 20px;
+    width: 100%;
+
+    margin: 0px;
+    padding: 0px;
+
+    /* necessary settings, otherwise the SVG background won't display properly */
+    background-size: 100% auto;
+    background-size: contain; /* scales the image as large as possible within its container without cropping or stretching the image */
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: scroll;
+}
+
+.lcd-display-container
+{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: 20px 20px 5px 20px 20px 5px 20px;
+
+    justify-items: stretch; /* aligns items along the inline (row) axis */
+    align-items: stretch; /* aligns along the block (column) axis) */
+    justify-content: space-between; /* aligns the total grid along the inline (row) axis */
+    align-content: space-between; /* aligns the total grid along the block (column) axis */
+    gap: 5px;
+
+    margin: 0px;
+    padding: 5px;
+
+    border-radius: 5px;
+
+    background: url("../images/lcd-screen-color-seamless.png") repeat top left;
+
+    box-shadow: inset 5px 5px 3px 0px hsla(166, 20%, 10%, 0.9),
+                1px 1px 2px 0px hsla(39, 28%, 95%, 0.7),
+                -1px -1px 2px 0px hsla(39, 28%, 10%, 0.5);
+}
+
+/* custom local font definition; this defines a font named "LCD14" */
+@font-face
+{
+    font-family: LCD14;
+    src: url("../images/LCD14.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+.lcd-segment-font
+{
+    color: hsl(190, 40%, 10%);
+    font-family: LCD14, Tahoma, serif;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.lcd-regular-font
+{
+    color: hsl(190, 40%, 10%);
+    font-family: monospace;
+}
+
+.lcd-label
+{
+    margin: 0px;
+    padding: 0px;
+
+    font-size: 16px;
+    /* border: solid 1px; */
+    text-shadow: 2px 2px 1px hsla(190, 40%, 10%, 0.5);
+}
+
+.lcd-number-input
+{
+    margin: 0px;
+    padding: 0px;
+
+    font-size: 20px;
+    text-shadow: 2px 2px 1px hsla(190, 40%, 10%, 0.5);
+
+    background: transparent;
+    border: none;
+    /* border: solid 1px; */
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.lcd-number-border
+{
+    margin: 0px;
+    padding: 0px;
+
+    border: solid 1px hsl(190, 40%, 10%);
+}
+
+.lcd-border-top-left
+{
+    border-top: none;
+    border-left: none;
+}
+
+.unselectable
+{
+    user-select: none;
+    -webkit-user-select: none;
+}

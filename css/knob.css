@@ -1,0 +1,71 @@
+.knob-container
+{
+    --knob-width: 50px;
+    --knob-height: 50px;
+    --text-height: 12px;
+
+    box-sizing: border-box;
+
+    width: calc(var(--knob-width) + 10px);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start; /* set alignment on main axis */
+    align-items: center; /* set alingment on cross-axis */
+    align-content: center; /* set space between flex lines */
+
+    margin: 5px;
+    padding: 0px;
+}
+
+.knob-canvas
+{
+    background-image: url("../images/knob/knob-opt.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    filter: brightness(0.95);
+}
+
+/* custom local font definition; this defines a font named "LCD14" */
+@font-face
+{
+    font-family: LCD14;
+    src: url("../fonts/LCD14.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+.knob-label
+{
+    width: calc(var(--knob-width) + 10px);
+    height: calc(var(--text-height) + 4px);
+
+    margin: 0px;
+    padding: 0px;
+
+    color: hsl(0, 0%, 85%);
+    text-align: center;
+    font-family: sans-serif;
+    font-size: var(--text-height);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.knob-numeric-value
+{
+    width: calc(var(--knob-width) + 10px);
+    height: calc(var(--text-height) + 4px);
+
+    margin: 0px;
+    padding: 0px;
+
+    color: hsl(210, 30%, 60%);
+    text-align: center;
+    font-family: monospace, monospace; /* we use 'monospace' twice for browser compatibility */
+    font-size: var(--text-height);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}

@@ -1,0 +1,136 @@
+.vertical-fader-container
+{
+    --faderWidth: 40px;
+    --faderHeight: 150px;
+    --textHeight: 12px;
+
+    width: var(--faderWidth);
+    height: calc(var(--faderHeight) + var(--textHeight));
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+
+    justify-items: center;
+    align-items: start;
+    justify-content: center;
+    gap: 0px;
+
+    margin: 5px;
+    padding: 0px;
+}
+
+.vertical-fader-track
+{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    width: var(--faderWidth);
+    height: var(--faderHeight);
+
+    margin: 0px;
+    padding: 0px;
+
+    /* necessary settings, otherwise the SVG backgorund won't display properly: */
+    background-size: 100% auto;
+    background-size: contain;
+    /* background-size: cover; */
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-image: url("../images/fader/fader-vertical-track-opt.svg");
+}
+
+.vertical-fader-thumb-container
+{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: center;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.vertical-fader-thumb-prefill
+{
+    width: 100%;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.vertical-fader-thumb
+{
+    width: 100%;
+    height: var(--thumbHeight);
+
+    margin: 0px;
+    padding: 0px;
+
+    /* necessary settings, otherwise the SVG background won't display properly (the 'content' property is especially important) */
+    background-size: 100% auto;
+    background-size: contain; /* scales the image as large as possible within its container without cropping or stretching the image */
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: scroll;
+    content: url("../images/fader/fader-vertical-thumb-grey.svg");
+}
+
+
+.vertical-fader-label
+{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    width: var(--faderWidth);
+    height: calc(var(--textHeight) + 4px);
+
+    margin: 0px;
+    padding: 0px;
+
+    color: hsl(0, 0%, 85%);
+    font-family: sans-serif;
+    text-align: center;
+    font-size: var(--textHeight);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.vertical-fader-numeric-value
+{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    width: var(--faderWidth);
+    height: calc(var(--textHeight) + 4px);
+
+    margin: 0px;
+    padding: 0px;
+
+    color: hsl(210, 30%, 60%);
+    text-align: center;
+    font-family: monospace, monospace; /* we use 'monospace' twice for browser compatibility */
+    font-size: var(--textHeight);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.vertical-fader-label-visible
+{
+    display: block;
+}
+
+.vertical-fader-label-invisible
+{
+    display: none;
+}

@@ -1,0 +1,251 @@
+.step-sequencer-container
+{
+    box-sizing: border-box;
+
+    /* height: 400px; */
+    /* width: 800px; */
+
+    display: grid;
+    grid-template-columns:  10px /* frame */
+                            5px /* gap */
+                            40px /* dummy keyboard */
+                            5px /* gap */
+                            repeat(16, 30px) /* sequencer steps */
+                            5px /* gap */
+                            10px; /* frame */
+
+    grid-template-rows: 10px /* frame */
+                        5px /* gap */
+                        repeat(13, 15px) /* notes per each sequencer step */
+                        5px /* gap */
+                        10px /* frame */
+                        5px /* gap */
+                        30px; /* button */
+
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 0px;
+
+    margin: 1px;
+    padding: 0px;
+
+    border-radius: 2px;
+    background: linear-gradient(hsla(216, 20%, 15%, 0.8) 0%, hsla(207, 20%, 5%, 0.8) 50%),
+                url("../images/textures/texture-large-filt-seamless.jpg") repeat top left;
+}
+
+.step-sequencer-settings-container
+{
+    box-sizing: border-box;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between; /* set alignment on main axis */
+    align-items: center; /* set alingment on cross-axis */
+    align-content: center; /* set space between flex lines */
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.step-sequencer-param-label
+{
+    margin: 0px;
+    padding: 0px;
+
+    color: hsl(0, 0%, 85%);
+    font-family: sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.step-sequencer-toggle-button-group
+{
+    box-sizing: border-box;
+
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.step-sequencer-screen-frame
+{
+    margin: 0px;
+    padding: 20px;
+
+    border-radius: 2px;
+    background: linear-gradient(hsla(0, 0%, 5%, 0.8) 0%, hsla(0, 0%, 0%, 0.8) 50%),
+                url("../images/textures/texture-large-filt-seamless.jpg") repeat top left;
+}
+
+.step-sequencer-screen
+{
+    margin: 0px;
+    padding: 0px;
+
+    background: linear-gradient(hsla(216, 30%, 31%, 0.4) 0%, hsla(216, 30%, 30%, 0.4) 50%),
+                url("../images/textures/lcd-screen-color-seamless.png") repeat left top;
+}
+
+.step-sequencer-white-key
+{
+    margin: 0px;
+    padding: 0px;
+
+    border: solid 1px hsl(210, 50%, 15%);
+    /* background: hsla(210, 50%, 50%, 0.5); */
+}
+
+.step-sequencer-black-key
+{
+    margin: 0px;
+    padding: 0px;
+
+    border: solid 1px hsl(210, 50%, 15%);
+    background: hsl(210, 50%, 15%);
+}
+
+.step-sequencer-white-key-step-background-top
+{
+    margin: 0px;
+    padding: 0px;
+
+    border: solid 1px hsla(0, 0%, 0%, 0);
+    border-top: solid 1px hsla(210, 50%, 15%, 0.5);
+    border-bottom: solid 1px hsla(210, 50%, 15%, 0.5);
+}
+
+.step-sequencer-white-key-step-background-bottom
+{
+    margin: 0px;
+    padding: 0px;
+
+    border: solid 1px hsla(0, 0%, 0%, 0);
+    border-bottom: solid 1px hsla(210, 50%, 15%, 0.5);
+}
+
+.step-sequencer-black-key-step-background 
+{
+    margin: 0px;
+    padding: 0px;
+
+    border: solid 1px hsla(0, 0%, 0%, 0);
+    /* border-top: solid 1px hsla(210, 50%, 15%, 0.5); */
+    border-bottom: solid 1px hsla(210, 50%, 15%, 0.5);
+    background: hsla(210, 50%, 15%, 0.3);
+}
+
+.step-sequencer-vertical-step-background
+{
+    border-right: solid 1px hsla(210, 50%, 15%, 0.5);
+}
+
+/* The stepIndicator* classes are for the outer boundary of the sequencer steps.
+** The elements that belong to these classes only serve as a visual indicator of the current step,
+** they are for animation purposes, they don't have user interaction. */
+.step-sequencer-step-indicator
+{
+    box-sizing: border-box;
+
+    width: 20px;
+    height: 20px;
+
+    margin: 0px;
+    padding: 2px;
+
+    border-radius: 0px;
+    border: solid 2px transparent;
+
+    color: hsl(0, 0%, 85%);
+    font-family: sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.step-sequencer-step-indicator-off
+{
+    border-color: transparent;
+}
+
+.step-sequencer-step-indicator-on
+{
+    border-color: hsl(210, 50%, 15%);
+}
+
+/* The stepToggle* classes are for the inner content of the sequencer steps.
+** The elements that belong to these classes are ment to be clicked on to toggle on/off the clicked step.
+** These elements are never animated, they are only toggled on/off. */
+.step-sequencer-step-toggle
+{
+    box-sizing: border-box;
+
+    width: 12px;
+    height: 12px;
+
+    margin: 0px;
+    padding: 0px;
+
+    border-radius: 0px;
+    border: solid 1px hsl(210, 50%, 15%);
+
+    color: hsl(0, 0%, 85%);
+    font-family: sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.step-sequencer-step-toggle-off
+{
+    background: transparent;
+}
+
+.step-sequencer-step-toggle-on
+{
+    background: hsl(210, 50%, 15%);
+}
+
+/* the exact note selected on the screen, per each step */
+.step-sequencer-step-note
+{
+    margin: 0px;
+    padding: 0px;
+
+    border-radius: 0px;
+    border: solid 1px hsl(0, 0%, 50%);
+}
+
+.step-sequencer-step-note:hover
+{
+    margin: 0px;
+    padding: 0px;
+
+    border-radius: 0px;
+    background: hsla(210, 50%, 15%, 0.5);
+}
+
+.step-sequencer-step-note-off
+{
+    border: solid 1px hsla(210, 50%, 15%, 0);
+}
+
+.step-sequencer-step-note-on
+{
+    border: solid 1px hsl(210, 50%, 15%);
+    background: hsl(210, 50%, 15%);
+}

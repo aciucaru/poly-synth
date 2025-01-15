@@ -1,0 +1,34 @@
+/* Remove browser-specific styles that the browser applies to a <button> */
+.toggle-button-reset
+{
+    border: none;
+
+    background-color: none;
+    background: none;
+}
+
+.toggle-button
+{
+    /* width and height are necessary in order to display the background image properly */
+    width: 24px;
+    height: 20px;
+
+    padding: 0px;
+    margin: 0px;
+
+    background-size: 100% auto;
+    background-size: contain;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.toggle-button-enabled
+{
+    background-image: url("../images/toggle-button/toggle-button-fg-on-green-opt-2.svg");
+}
+
+.toggle-button-disabled
+{
+    background-image: url("../images/toggle-button/toggle-button-fg-off-green-opt-2.svg");
+}

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<meta charset="utf-8" />
+		<title>Simple HTML</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- JS library scripts -->
+		<!-- LOAD Tone.js from unpkg -->
+		<script src="https://unpkg.com/tone"></script>
+
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/toggle-button.css">
+    <link rel="stylesheet" href="css/knob.css">
+    <link rel="stylesheet" href="css/vertical-fader.css">
+    <link rel="stylesheet" href="css/radio-button-group.css">
+    <link rel="stylesheet" href="css/synth-panels.css">
+    <link rel="stylesheet" href="css/step-sequencer.css">
+	</head>
+	<body>
+    <main>
+      <div class="main-container">
+
+        <!-- <button id="button-01" class="toggle-button"></button> -->
+
+        <div class="synth-panel-container">
+          <!-- DuoSynth panel **************************************************************************************** -->
+          <div class="duosynth-panel">
+            <div class="synth-panel-label duosynth-label" style="grid-column: 2 / 8; grid-row: 1 / 2;">DUO SYNTH</div>
+            <div class="duosynth-border" style="grid-column: 1 / 8; grid-row: 1 / 2;"></div>
+
+            <button id="duosynth-on-off-button" class="toggle-button-reset toggle-button toggle-button-enabled" style="grid-column: 1 / 2; grid-row: 1 / 2;"></button>
+
+            <div id="duosynth-vibrato-rate-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">VB. RATE</div>
+            </div>
+
+            <div id="duosynth-harmonicity-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">HARMON.</div>
+            </div>
+
+            <div id="duosynth-voice-1-volume-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">VOLUME 1</div>
+            </div>
+
+            <div id="duo-synth-voice-1-osc-type" class="radio-button-4-by-3-group" style="grid-column: 3 / 4; grid-row: 2 / 3;">
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape"  value="sawtooth" checked>
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="triangle">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="square">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="sine">
+              </label>
+
+              <img class="radio-icon" src="images/icons/wave-saw-single-opt.svg" alt="sawtooth" />
+              <img class="radio-icon" src="images/icons/wave-triangle-single-opt.svg" alt="triangle" />
+              <img class="radio-icon" src="images/icons/wave-pulse-single-opt.svg" alt="square" />
+              <img class="radio-icon" src="images/icons/wave-sine-single-opt.svg" alt="sine" />
+
+              <div class="radio-group-label" style="grid-column: 1 / 5; grid-row: 3 / 4;">SHAPE 1</div>
+            </div>
+
+            <div id="duosynth-voice-2-volume-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">VOLUME 2</div>
+            </div>
+
+            <div id="duo-synth-voice-2-osc-type" class="radio-button-4-by-3-group" style="grid-column: 3 / 4; grid-row: 3 / 4;">
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-2-osc-shape" value="sawtooth" checked>
+              </label>
+      
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-2-osc-shape" value="triangle">
+              </label>
+      
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-2-osc-shape" value="square">
+              </label>
+    
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-2-osc-shape" value="sine">
+              </label>
+
+              <img class="radio-icon" src="images/icons/wave-saw-single-opt.svg" alt="sawtooth" />
+              <img class="radio-icon" src="images/icons/wave-triangle-single-opt.svg" alt="triangle" />
+              <img class="radio-icon" src="images/icons/wave-pulse-single-opt.svg" alt="square" />
+              <img class="radio-icon" src="images/icons/wave-sine-single-opt.svg" alt="sine" />
+
+              <div class="radio-group-label" style="grid-column: 1 / 5; grid-row: 4 / 5;">SHAPE 2</div>
+            </div>
+
+            <div id="duo-synth-volume-attack-fader" class="vertical-fader-container"
+                  style="grid-column: 4 / 5; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">A</div>
+            </div>
+
+            <div id="duo-synth-volume-decay-fader" class="vertical-fader-container"
+                  style="grid-column: 5 / 6; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">D</div>
+            </div>
+
+            <div id="duo-synth-volume-sustain-fader" class="vertical-fader-container"
+                  style="grid-column: 6 / 7; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">S</div>
+            </div>
+
+            <div id="duo-synth-volume-release-fader" class="vertical-fader-container"
+                  style="grid-column: 7 / 8; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">R</div>
+            </div>
+
+          </div>
+
+          <!-- FMSynth panel **************************************************************************************** -->
+          <div class="fmsynth-panel">
+            <div class="synth-panel-label fmsynth-label" style="grid-column: 2 / 12; grid-row: 1 / 2;">FM SYNTH</div>
+            <div class="fmsynth-border" style="grid-column: 1 / 12; grid-row: 1 / 2;"></div>
+
+            <button id="fmsynth-on-off-button" class="toggle-button-reset toggle-button toggle-button-disabled" style="grid-column: 1 / 2; grid-row: 1 / 2;"></button>
+
+            <div id="fmsynth-octaves-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">OCTAVE</div>
+            </div>
+
+            <div id="fmsynth-semitones-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">SEMITONE</div>
+            </div>
+            
+            <div id="fmsynth-harmonicity-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">HARMON.</div>
+            </div>
+
+            <div id="fmsynth-modulation-index-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">MOD INDX</div>
+            </div>
+
+            <div id="fmsynth-carrier-osc-type" class="radio-button-4-by-3-group" style="grid-column: 3 / 4; grid-row: 2 / 3;">
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fmsynth-carrier-osc-shape" value="sawtooth">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fmsynth-carrier-osc-shape" value="triangle">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fmsynth-carrier-osc-shape" value="square">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fmsynth-carrier-osc-shape" value="sine" checked>
+              </label>
+
+              <img class="radio-icon" src="images/icons/wave-saw-single-opt.svg" alt="sawtooth" />
+              <img class="radio-icon" src="images/icons/wave-triangle-single-opt.svg" alt="triangle" />
+              <img class="radio-icon" src="images/icons/wave-pulse-single-opt.svg" alt="square" />
+              <img class="radio-icon" src="images/icons/wave-sine-single-opt.svg" alt="sine" />
+
+              <div class="radio-group-label" style="grid-column: 1 / 5; grid-row: 3 / 4;">CARRIER</div>
+            </div>
+
+            <div id="fmsynth-modulation-osc-type" class="radio-button-4-by-3-group" style="grid-column: 3 / 4; grid-row: 3 / 4;">
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fmsynth-modulation-osc-shape" value="sawtooth">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fmsynth-modulation-osc-shape" value="triangle">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fmsynth-modulation-osc-shape" value="square" checked>
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fmsynth-modulation-osc-shape" value="sine">
+              </label>
+
+              <img class="radio-icon" src="images/icons/wave-saw-single-opt.svg" alt="sawtooth" />
+              <img class="radio-icon" src="images/icons/wave-triangle-single-opt.svg" alt="triangle" />
+              <img class="radio-icon" src="images/icons/wave-pulse-single-opt.svg" alt="square" />
+              <img class="radio-icon" src="images/icons/wave-sine-single-opt.svg" alt="sine" />
+
+              <div class="radio-group-label" style="grid-column: 1 / 5; grid-row: 3 / 4;">MODULATOR</div>
+            </div>
+
+            <!-- Carrier ADSR envelope ******************* -->
+            <div id="fmsynth-carrier-attack-fader" class="vertical-fader-container"
+                  style="grid-column: 4 / 5; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">A</div>
+            </div>
+
+            <div id="fmsynth-carrier-decay-fader" class="vertical-fader-container"
+                  style="grid-column: 5 / 6; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">D</div>
+            </div>
+
+            <div id="fmsynth-carrier-sustain-fader" class="vertical-fader-container"
+                  style="grid-column: 6 / 7; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">S</div>
+            </div>
+
+            <div id="fmsynth-carrier-release-fader" class="vertical-fader-container"
+                  style="grid-column: 7 / 8; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">R</div>
+            </div>
+
+            <!-- Modulator ADSR envelope ******************* -->
+            <div id="fmsynth-modulator-attack-fader" class="vertical-fader-container"
+                  style="grid-column: 8 / 9; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">A</div>
+            </div>
+
+            <div id="fmsynth-modulator-decay-fader" class="vertical-fader-container"
+                  style="grid-column: 9 / 10; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">D</div>
+            </div>
+
+            <div id="fmsynth-modulator-sustain-fader" class="vertical-fader-container"
+                  style="grid-column: 10 / 11; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">S</div>
+            </div>
+
+            <div id="fmsynth-modulator-release-fader" class="vertical-fader-container"
+                  style="grid-column: 11 / 12; grid-row: 2 / 4;">
+              <div class="vertical-fader-track unselectable"></div>
+
+              <div class="vertical-fader-thumb-container unselectable">
+                  <div class="vertical-fader-thumb-prefill unselectable"></div>
+                  <div class="vertical-fader-thumb unselectable"></div>
+              </div>
+          
+              <div class="vertical-fader-label unselectable">R</div>
+            </div>
+          </div>
+
+          <!-- FatSynth panel **************************************************************************************** -->
+          <div class="fatsynth-panel">
+            <div class="synth-panel-label fatsynth-label" style="grid-column: 2 / 4; grid-row: 1 / 2;">FAT SYNTH</div>
+            <div class="fatsynth-border" style="grid-column: 1 / 4; grid-row: 1 / 2;"></div>
+
+            <button id="fatsynth-on-off-button" class="toggle-button-reset toggle-button toggle-button-disabled" style="grid-column: 1 / 2; grid-row: 1 / 2;"></button>
+
+            <div id="fatsynth-octaves-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">OCTAVE</div>
+            </div>
+
+            <div id="fatsynth-semitones-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">SEMITONE</div>
+            </div>
+
+            <div id="fatsynth-count-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">COUNT</div>
+            </div>
+
+            <div id="fatsynth-spread-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">SPREAD</div>
+            </div>
+
+            <div id="fatsynth-osc-type" class="radio-button-2-by-3-group" style="grid-column: 3 / 4; grid-row: 2 / 3;">
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fatsynth-osc-shape" value="fatsawtooth" checked>
+              </label>
+  
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fatsynth-osc-shape" value="fatsquare">
+              </label>
+  
+              <img class="radio-icon" src="images/icons/wave-saw-single-opt.svg" alt="sawtooth" />
+              <img class="radio-icon" src="images/icons/wave-pulse-single-opt.svg" alt="square" />
+  
+              <div class="radio-group-label" style="grid-column: 1 / 3; grid-row: 3 / 4;">SHAPE</div>
+            </div>
+
+            <div id="fatsynth-note-duration" class="radio-button-2-by-3-compact-group" style="grid-column: 3 / 4; grid-row: 3 / 4;">
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fatsynth-duration" value="4n">
+              </label>
+
+              <div class="radio-individual-label">1/4</div>
+  
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fatsynth-duration" value="2n" checked>
+              </label>
+
+              <div class="radio-individual-label">1/2</div>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="fatsynth-duration" value="1n">
+              </label>
+
+              <div class="radio-individual-label">1</div>
+            </div>
+          </div>
+
+        </div>
+
+        <br><br>
+        <div id="keyboard" class="keyboard-container">
+          <object type="image/svg+xml" data="images/keyboard/keyboard-5-octaves-simple-opt.svg" class="keyboard-svg unselectable" width="1000px">
+        </div>
+      </div>
+    </main>
+
+    <script src="js/synth/duo-synth.js"></script>
+    <script src="js/synth/fat-synth.js"></script>
+    <script src="js/synth/fm-synth.js"></script>
+    <script src="js/synth/poly-synth.js"></script>
+
+    <script src="js/ui/controls/toggle-button.js"></script>
+    <script src="js/ui/controls/knob.js"></script>
+    <script src="js/ui/controls/vertical-fader.js"></script>
+    <script src="js/ui/controls/radio-button-group.js"></script>
+    <script src="js/ui/controls/keyboard.js"></script>
+
+    <script src="js/app-data.js"></script>
+
+    <script src="js/ui/panels/duo-synth-panel.js"></script>
+    <script src="js/ui/panels/fat-synth-panel.js"></script>
+    <script src="js/ui/panels/fm-synth-panel.js"></script>
+
+    <script src="js/main.js"></script>
+	</body>
+</html>
