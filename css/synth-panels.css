@@ -1,4 +1,4 @@
-.synth-panel-container
+.synth-panel-row-container
 {
     display: flex;
     flex-flow: row nowrap;
@@ -156,4 +156,36 @@
     padding: 0px;
 
     border-bottom: solid 1px hsl(180, 40%, 40%);
+}
+
+.multimode-filter-panel
+{
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(3, auto);
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 0px;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.multimode-filter-label
+{
+    color: hsl(0, 0%, 70%);
+}
+
+.multimode-filter-border
+{
+    justify-self: stretch;
+    align-self: end;
+
+    margin: 0px;
+    padding: 0px;
+
+    border-bottom: solid 1px hsl(0, 0%, 70%);
 }

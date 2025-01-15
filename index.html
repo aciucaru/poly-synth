@@ -24,7 +24,7 @@
 
         <!-- <button id="button-01" class="toggle-button"></button> -->
 
-        <div class="synth-panel-container">
+        <div class="synth-panel-row-container">
           <!-- DuoSynth panel **************************************************************************************** -->
           <div class="duosynth-panel">
             <div class="synth-panel-label duosynth-label" style="grid-column: 2 / 8; grid-row: 1 / 2;">DUO SYNTH</div>
@@ -47,30 +47,7 @@
               <div class="knob-label unselectable">VOLUME 1</div>
             </div>
 
-            <div id="duo-synth-voice-1-osc-type" class="radio-button-4-by-3-group" style="grid-column: 3 / 4; grid-row: 2 / 3;">
-              <label class="radio-label">
-                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape"  value="sawtooth" checked>
-              </label>
 
-              <label class="radio-label">
-                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="triangle">
-              </label>
-
-              <label class="radio-label">
-                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="square">
-              </label>
-
-              <label class="radio-label">
-                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="sine">
-              </label>
-
-              <img class="radio-icon" src="images/icons/wave-saw-single-opt.svg" alt="sawtooth" />
-              <img class="radio-icon" src="images/icons/wave-triangle-single-opt.svg" alt="triangle" />
-              <img class="radio-icon" src="images/icons/wave-pulse-single-opt.svg" alt="square" />
-              <img class="radio-icon" src="images/icons/wave-sine-single-opt.svg" alt="sine" />
-
-              <div class="radio-group-label" style="grid-column: 1 / 5; grid-row: 3 / 4;">SHAPE 1</div>
-            </div>
 
             <div id="duosynth-voice-2-volume-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 3 / 4;">
               <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
@@ -388,6 +365,71 @@
               </label>
 
               <div class="radio-individual-label">1</div>
+            </div>
+          </div>
+
+          <div class="synth-panel-row-container">
+            <!-- Multi-mode filter panel **************************************************************************************** -->
+            <div class="multimode-filter-panel">
+              <div class="multimode-filter-label multimode-filter-label" style="grid-column: 2 / 4; grid-row: 1 / 2;">FAT SYNTH</div>
+              <div class="multimode-filter-border" style="grid-column: 1 / 4; grid-row: 1 / 2;"></div>
+  
+              <button id="fatsynth-on-off-button" class="toggle-button-reset toggle-button toggle-button-disabled" style="grid-column: 1 / 2; grid-row: 1 / 2;"></button>
+  
+              <div id="fatsynth-octaves-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
+                <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+                <div class="knob-label unselectable">OCTAVE</div>
+              </div>
+  
+              <div id="fatsynth-semitones-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 3 / 4;">
+                <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+                <div class="knob-label unselectable">SEMITONE</div>
+              </div>
+  
+              <div id="fatsynth-count-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 2 / 3;">
+                <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+                <div class="knob-label unselectable">COUNT</div>
+              </div>
+  
+              <div id="fatsynth-spread-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 3 / 4;">
+                <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+                <div class="knob-label unselectable">SPREAD</div>
+              </div>
+  
+              <div id="fatsynth-osc-type" class="radio-button-2-by-3-group" style="grid-column: 3 / 4; grid-row: 2 / 3;">
+                <label class="radio-label">
+                  <input class="radio-button" type="radio" name="fatsynth-osc-shape" value="fatsawtooth" checked>
+                </label>
+    
+                <label class="radio-label">
+                  <input class="radio-button" type="radio" name="fatsynth-osc-shape" value="fatsquare">
+                </label>
+    
+                <img class="radio-icon" src="images/icons/wave-saw-single-opt.svg" alt="sawtooth" />
+                <img class="radio-icon" src="images/icons/wave-pulse-single-opt.svg" alt="square" />
+    
+                <div class="radio-group-label" style="grid-column: 1 / 3; grid-row: 3 / 4;">SHAPE</div>
+              </div>
+  
+              <div id="fatsynth-note-duration" class="radio-button-2-by-3-compact-group" style="grid-column: 3 / 4; grid-row: 3 / 4;">
+                <label class="radio-label">
+                  <input class="radio-button" type="radio" name="fatsynth-duration" value="4n">
+                </label>
+  
+                <div class="radio-individual-label">1/4</div>
+    
+                <label class="radio-label">
+                  <input class="radio-button" type="radio" name="fatsynth-duration" value="2n" checked>
+                </label>
+  
+                <div class="radio-individual-label">1/2</div>
+  
+                <label class="radio-label">
+                  <input class="radio-button" type="radio" name="fatsynth-duration" value="1n">
+                </label>
+  
+                <div class="radio-individual-label">1</div>
+              </div>
             </div>
           </div>
 
