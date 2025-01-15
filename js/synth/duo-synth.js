@@ -2,6 +2,8 @@ class DuoSynthMonophonic
 {
     #duoSynth = null;
 
+    #gain = null;
+
     /* Tells if this synthesizer is enabled.
     ** If it is enabled, then "triggerAttack(note)" will play the note, but if it is disabled,
     ** triggerAttack(note) will ignore the call and won't play anything. */
@@ -11,9 +13,10 @@ class DuoSynthMonophonic
     {
         this.#duoSynth = new Tone.DuoSynth();
 
-        const vol = new Tone.Volume(0).toDestination(); // 0 dB volume
+        this.#gain = new Tone.Gain();
+        this.#gain.gain.linearRampToValueAtTime(1.0, Tone.now());
 
-        this.#duoSynth.connect(vol);
+        this.#duoSynth.connect(this.#gain);
 
         // The vibrato amount is fixed (any value from 0.5 to 1.0 gives visible results)
         this.#duoSynth.set( { vibratoAmount: 0.5 } );
@@ -22,6 +25,9 @@ class DuoSynthMonophonic
         this.#duoSynth.set( { voice0: { volume : -12.0} } );
         this.#duoSynth.set( { voice1: { volume : -12.0} } );
     }
+
+    // Returns the final node of this synth
+    getOutputNode() { return this.#gain; }
 
     triggerAttack(note)
     {
@@ -46,6 +52,11 @@ class DuoSynthMonophonic
     setEnabled(isEnabled)
     {
         this.#isEnabled = isEnabled;
+    }
+
+    setGain(gain)
+    {
+        this.#gain.gain.linearRampToValueAtTime(gain, Tone.now());
     }
 
     setVibratoRate(vibratoRate)

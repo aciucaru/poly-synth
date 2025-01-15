@@ -2,6 +2,8 @@ class FMSynthMonophonic
 {
     #fmSynth = null;
 
+    #gain = null;
+
     #octavesOffset = 0;
     #semitonesOffset = 0;
 
@@ -44,10 +46,14 @@ class FMSynthMonophonic
                 }
             });
 
-        const vol = new Tone.Volume(0).toDestination(); // 0 dB volume
+        this.#gain = new Tone.Gain();
+        this.#gain.gain.linearRampToValueAtTime(1.0, Tone.now());
 
-        this.#fmSynth.connect(vol);
+        this.#fmSynth.connect(this.#gain);
     }
+
+    // Returns the final node of this synth
+    getOutputNode() { return this.#gain; }
 
     triggerAttack(note)
     {

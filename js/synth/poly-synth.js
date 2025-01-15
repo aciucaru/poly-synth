@@ -10,11 +10,21 @@ class PolySynth
     #fatSynth = new FatSynthMonophonic();
     #fmSynth = new FMSynthMonophonic();
 
+    #multiModeFilter = new MultiModeFilter();
+
     constructor()
     {
         this.#duoSynth.setEnabled(true);
         this.#fmSynth.setEnabled(false);
         this.#fatSynth.setEnabled(false);
+
+        // Connect synths to filter
+        this.#multiModeFilter.connectInput(this.#duoSynth);
+        this.#multiModeFilter.connectInput(this.#fatSynth);
+        this.#multiModeFilter.connectInput(this.#fmSynth);
+
+        // Connect filter to destination
+        this.#multiModeFilter.getOutputNode().toDestination();
     }
 
     triggerAttack(note)
@@ -41,4 +51,5 @@ class PolySynth
     getDuoSynth() { return this.#duoSynth; }
     getFatSynth() { return this.#fatSynth; }
     getFMSynth() { return this.#fmSynth; }
+    getMultiModeFilter() { return this.#multiModeFilter; }
 }

@@ -390,32 +390,29 @@
               <div class="radio-individual-label">1</div>
             </div>
           </div>
+        </div>
 
-          <div class="synth-panel-row-container">
-            <!-- Multi-mode filter panel **************************************************************************************** -->
-            <div class="multimode-filter-panel">
-              <div class="multimode-filter-label multimode-filter-label" style="grid-column: 2 / 4; grid-row: 1 / 2;">MULTI-MODE FILTER</div>
-              <div class="multimode-filter-border" style="grid-column: 1 / 4; grid-row: 1 / 2;"></div>
-  
-              <button id="multimode-filter-on-off-button" class="toggle-button-reset toggle-button toggle-button-disabled" style="grid-column: 1 / 2; grid-row: 1 / 2;"></button>
-  
-              <div id="multimode-filter-mode-weigth-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
-                <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
-                <div class="knob-label unselectable">MODE</div>
-              </div>
-  
-              <div id="multimode-filter-frequency-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 3 / 4;">
-                <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
-                <div class="knob-label unselectable">FREQ.</div>
-              </div>
-  
-              <div id="multimode-filter-qfactor-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 2 / 3;">
-                <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
-                <div class="knob-label unselectable">Q FACT.</div>
-              </div>
+        <div class="synth-panel-row-container">
+          <!-- Multi-mode filter panel **************************************************************************************** -->
+          <div class="multimode-filter-panel">
+            <div class="synth-panel-label multimode-filter-label" style="grid-column: 1 / 5; grid-row: 1 / 2;">MULTI-MODE FILTER</div>
+            <div class="multimode-filter-border" style="grid-column: 1 / 5; grid-row: 1 / 2;"></div>
+
+            <div id="multimode-filter-mode-weigth-knob" class="knob-container" style="grid-column: 2 / 4; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">MODE</div>
+            </div>
+
+            <div id="multimode-filter-frequency-knob" class="knob-container" style="grid-column: 1 / 3; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">FREQ.</div>
+            </div>
+
+            <div id="multimode-filter-qfactor-knob" class="knob-container" style="grid-column: 3 / 5; grid-row: 3 / 4;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">Q FACT.</div>
             </div>
           </div>
-
         </div>
 
         <br><br>
@@ -428,6 +425,7 @@
     <script src="js/synth/duo-synth.js"></script>
     <script src="js/synth/fat-synth.js"></script>
     <script src="js/synth/fm-synth.js"></script>
+    <script src="js/filter/multi-mode-filter.js"></script>
     <script src="js/synth/poly-synth.js"></script>
 
     <script src="js/ui/controls/toggle-button.js"></script>
@@ -441,6 +439,7 @@
     <script src="js/ui/panels/duo-synth-panel.js"></script>
     <script src="js/ui/panels/fat-synth-panel.js"></script>
     <script src="js/ui/panels/fm-synth-panel.js"></script>
+    <script src="js/ui/panels/multi-mode-filter-panel.js"></script>
 
     <script src="js/main.js"></script>
 	</body>

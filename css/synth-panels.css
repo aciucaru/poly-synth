@@ -161,7 +161,7 @@
 .multimode-filter-panel
 {
     display: grid;
-    grid-template-columns: repeat(7, auto);
+    grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(3, auto);
 
     justify-items: center;
@@ -176,7 +176,7 @@
 
 .multimode-filter-label
 {
-    color: hsl(0, 0%, 70%);
+    color: hsl(0, 0%, 60%);
 }
 
 .multimode-filter-border
@@ -187,5 +187,5 @@
     margin: 0px;
     padding: 0px;
 
-    border-bottom: solid 1px hsl(0, 0%, 70%);
+    border-bottom: solid 1px hsl(0, 0%, 40%);
 }

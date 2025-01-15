@@ -8,6 +8,7 @@ class AppData
     getFatSynth() { return this.#polySynth.getFatSynth(); }
     getMetalSynth() { return this.#polySynth.getMetalSynth(); }
     getFMSynth() { return this.#polySynth.getFMSynth(); }
+    getMultiModeFilter() { return this.#polySynth.getMultiModeFilter(); }
 
     getPolySynth() { return this.#polySynth; }
 }
