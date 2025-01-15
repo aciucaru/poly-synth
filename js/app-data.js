@@ -13,6 +13,7 @@ class AppData
 
     getDistortionEffect() { return this.#polySynth.getDistortionEffect(); }
     getChebyshevEffect() { return this.#polySynth.getChebyshevEffect(); }
+    getVibratoEffect() { return this.#polySynth.getVibratoEffect(); }
 
     getPolySynth() { return this.#polySynth; }
 }

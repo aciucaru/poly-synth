@@ -441,6 +441,51 @@
             </div>
           </div>
 
+          <!-- Vibrato effect panel **************************************************************************************** -->
+          <div class="vibrato-effect-panel">
+            <div class="synth-panel-label pre-effect-label" style="grid-column: 1 / 4; grid-row: 1 / 2;">VIBRATO</div>
+
+            <div id="vibrato-effect-frequency-knob" class="knob-container" style="grid-column: 1 / 2; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">FREQ</div>
+            </div>
+
+            <div id="vibrato-effect-depth-knob" class="knob-container" style="grid-column: 2 / 3; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">DEPTH</div>
+            </div>
+
+            <div id="vibrato-effect-wet-level-knob" class="knob-container" style="grid-column: 3 / 4; grid-row: 2 / 3;">
+              <canvas width="50" height="50" class="knob-canvas unselectable"></canvas>
+              <div class="knob-label unselectable">AMOUNT</div>
+            </div>
+
+            <div id="vibrato-effect-osc-type" class="radio-button-4-by-3-group" style="grid-column: 1 / 3; grid-row: 3 / 4;">
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape"  value="sawtooth" checked>
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="triangle">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="square">
+              </label>
+
+              <label class="radio-label">
+                <input class="radio-button" type="radio" name="duosynth-voice-1-osc-shape" value="sine">
+              </label>
+
+              <img class="radio-icon" src="images/icons/wave-saw-single-opt.svg" alt="sawtooth" />
+              <img class="radio-icon" src="images/icons/wave-triangle-single-opt.svg" alt="triangle" />
+              <img class="radio-icon" src="images/icons/wave-pulse-single-opt.svg" alt="square" />
+              <img class="radio-icon" src="images/icons/wave-sine-single-opt.svg" alt="sine" />
+
+              <div class="radio-group-label" style="grid-column: 1 / 5; grid-row: 3 / 4;">SHAPE</div>
+            </div>
+          </div>
+
         </div>
 
         <br><br>
@@ -456,6 +501,7 @@
     <script src="js/filter/multi-mode-filter.js"></script>
     <script src="js/effect/distortion-effect.js"></script>
     <script src="js/effect/chebyshev-distortion-effect.js"></script>
+    <script src="js/effect/vibrato-effect.js"></script>
 
     <script src="js/synth/poly-synth.js"></script>
 
@@ -473,6 +519,7 @@
     <script src="js/ui/panels/multi-mode-filter-panel.js"></script>
     <script src="js/ui/panels/distortion-effect-panel.js"></script>
     <script src="js/ui/panels/chebyshev-effect-panel.js"></script>
+    <script src="js/ui/panels/vibrato-effect-panel.js"></script>
 
     <script src="js/main.js"></script>
 	</body>
