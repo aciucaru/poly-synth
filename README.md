@@ -3,7 +3,7 @@
 #### Description:
 This is a JavaScript, HTML and Tone.js (Web Audio API) monophonic synthesizer.
 
-![screenshot](screenshots/synth-01.png)
+![screenshot](screenshots/synth-02.png)
 
 This synthesizer has the folowing features:
 * 3 Tone.js built-in synthesizers:
