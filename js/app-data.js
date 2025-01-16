@@ -14,6 +14,7 @@ class AppData
     getDistortionEffect() { return this.#polySynth.getDistortionEffect(); }
     getChebyshevEffect() { return this.#polySynth.getChebyshevEffect(); }
     getVibratoEffect() { return this.#polySynth.getVibratoEffect(); }
+    getPhaserEffect() { return this.#polySynth.getPhaserEffect(); }
 
     getPolySynth() { return this.#polySynth; }
 }

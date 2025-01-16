@@ -193,7 +193,7 @@
 .pre-effect-label
 {
     text-align: center;
-    color: hsl(160, 25%, 45%);
+    color: hsl(165, 25%, 45%);
 }
 
 .distortion-effect-panel
@@ -231,7 +231,23 @@
 .vibrato-effect-panel
 {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(3, auto);
+
+    justify-items: center;
+    align-items: stretch;
+    justify-content: center;
+    align-content: space-between;
+    gap: 0px;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.phaser-effect-panel
+{
+    display: grid;
+    grid-template-columns: repeat(6, auto);
     grid-template-rows: repeat(3, auto);
 
     justify-items: center;

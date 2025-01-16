@@ -5,6 +5,7 @@ class DistortionEffect
     constructor()
     {
         this.#distortion = new Tone.Distortion(0.0);
+        this.setWetLevel(0.0);
     }
 
     // Returns the final node of this synth

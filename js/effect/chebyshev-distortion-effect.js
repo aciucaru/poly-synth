@@ -5,6 +5,7 @@ class ChebyshevDistortionEffect
     constructor()
     {
         this.#chebyshevDistortion = new Tone.Chebyshev(1); // default polynomial order is 1 (no effect)
+        this.setWetLevel(0.0);
     }
 
     // Returns the final node of this synth

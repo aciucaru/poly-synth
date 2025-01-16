@@ -35,8 +35,8 @@ class MultiModeFilterPanel
         const knob3Options = new KnobOptions();
         knob3Options.minValue = 0.001;
         knob3Options.maxValue = 100.0;
-        knob3Options.initialValue = 1;
-        knob3Options.step = 1;
+        knob3Options.initialValue = 0.001;
+        knob3Options.step = 1.0;
         knob3Options.decimals = 0;
         this.#filterQFactorKnob = new Knob("multimode-filter-qfactor-knob", knob3Options);
         this.#filterQFactorKnob.setOnValueChange((newValue) =>

@@ -7,6 +7,7 @@ class VibratoEffect
         this.#vibrato = new Tone.Vibrato(5, 0.1);
         this.#vibrato.type = "sine";
 
+        this.setWetLevel(0.0);
     }
 
     // Returns the final node of this synth
