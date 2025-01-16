@@ -1,4 +1,4 @@
-# Vintage analog web synth
+# Tone.js Poly synth
 
 #### Description:
 This is a JavaScript, HTML and Tone.js (Web Audio API) monophonic synthesizer.
@@ -6,7 +6,7 @@ This is a JavaScript, HTML and Tone.js (Web Audio API) monophonic synthesizer.
 ![screenshot](screenshots/synth-02.png)
 
 This synthesizer has the folowing features:
-* 3 Tone.js built-in synthesizers:
+* 3 Tone.js built-in synthesizers (this is it's called a poly synth):
   * DuoSynth
   * FMSynth
   * Fat synth (a Tone.js PolySynth with a Tone.js FatOScillator)
